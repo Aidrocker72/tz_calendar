@@ -1,0 +1,1 @@
+export const CALENDAR_CELLS_COUNT = 42;
