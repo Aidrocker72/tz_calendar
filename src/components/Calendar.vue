@@ -103,7 +103,10 @@ import { toFormatISO } from '@/utils/toFormatISO';
 
   const cells = computed(() => {
     const firstDay = new Date(currentYear.value, currentMonth.value, 1);
-    const startOffset = firstDay.getDay();
+    const startOffset = firstDay.getDay() - 1;
+
+    if(selectDate < 0) startOffset = 6;
+    
     const gridStart = new Date(currentYear.value, currentMonth.value, 1 - startOffset);
     const arr = [];
 
